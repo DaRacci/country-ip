@@ -5,7 +5,10 @@ authors = ["Racci <racci@racci.dev"]
 edition = "2021"
 license = "MIT"
 readme = "README.md"
+repository = "https://github.com/Racci/country-ip"
 categories = ["command-line-utilities"]
+keywords = ["country", "ip", "geoip", "geo"]
+description = "Get a random IP address from a country."
 
 [profile.release]
 opt-level = 2
