@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   push:
-    paths: [ "src/*" ]
+    paths: [ "src/*", "Cargo.toml", ".github/workflows/build.yml" ]
     branches: [ master ]
 
 name: CI
