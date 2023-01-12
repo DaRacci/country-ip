@@ -1,0 +1,23 @@
+branch_whitelist = [ "master" ]
+
+pre_bump_hooks = [
+    "cargo clippy",
+    "cargo fmt --all",
+    "cargo set-version {{version}}",
+    "cargo build --release"
+]
+post_bump_hooks = [
+    "git push",
+    "git push origin {{version}}",
+    "cargo pacakage",
+    "cargo publish"
+]
+
+[commit_types]
+
+[changelog]
+path = "CHANGELOG.md"
+template = "remote"
+remote = "github.com"
+repository = "country-ip"
+owner = "DaRacci"
