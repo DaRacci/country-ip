@@ -40,9 +40,6 @@ jobs:
           command: build
           args: --release
 
-      - name: Strip files
-        run: strip target/release/${{ matrix.file }}
-
       - uses: actions/upload-artifact@v3.0.0
         with:
           name: CountryIP-${{ matrix.build }}
