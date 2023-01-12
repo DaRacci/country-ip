@@ -1,0 +1,49 @@
+on:
+  workflow_dispatch:
+  push:
+    paths: [ "src/*" ]
+    branches: [ master ]
+
+name: CI
+
+jobs:
+  build_matrix:
+    strategy:
+      matrix:
+        build: [linux, windows, macos]
+        include:
+          - build: linux
+            os: ubuntu-latest
+            file: countryip
+          - build: windows
+            os: windows-latest
+            file: countryip.exe
+          - build: macos
+            os: macos-latest
+            file: countryip
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v1
+
+      - name: Build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release
+
+      - name: Strip files
+        run: strip target/release/${{ matrix.file }}
+
+      - uses: actions/upload-artifact@v3.0.0
+        with:
+          name: CountryIP-${{ matrix.build }}
+          path: target/release/${{ matrix.file }}
