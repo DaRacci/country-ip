@@ -23,7 +23,7 @@ reqwest = { version = "0.11.13", features = ["default"] }
 async-std = { version = "1.12.0", features = ["tokio1"] }
 anyhow = { version = "1.0.68", features = ["default"] }
 simplelog = { version = "0.12.0", features = ["paris"] }
-rust_iso3166 = "0.1.7"
+rust_iso3166 = "0.1.10"
 rand = "0.8.5"
 tokio = { version = "1.24.1", features = ["rt", "macros"] }
 parallel-stream = "2.1.3"
