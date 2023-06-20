@@ -19,7 +19,7 @@ strip = "symbols"
 
 [dependencies]
 clap = { version = "4.0.32", features = ["derive"] }
-reqwest = { version = "0.11.13", features = ["default"] }
+reqwest = { version = "0.11.18", features = ["default"] }
 async-std = { version = "1.12.0", features = ["tokio1"] }
 anyhow = { version = "1.0.68", features = ["default"] }
 simplelog = { version = "0.12.0", features = ["paris"] }
