@@ -1,3 +1,5 @@
+# Country-IP has moved to [AMTSuppor/tools](https://github.com/AMTSupport/tools/tree/master/crates/country-ip)
+
 <h1 align="center">CountryIP</h1>
 
 ---
